@@ -4,12 +4,12 @@ Chat Bot Banner
 Welcome to the TensorFlow Chat Bot with Text Analysis and Intel oneAPI repository! This project showcases a powerful and interactive chat bot that utilizes advanced natural language processing techniques, including encoding-decoding and attention mechanisms, all powered by the cutting-edge TensorFlow framework. In addition, this project leverages the Intel oneAPI toolkit to optimize the performance of the chat bot on Intel architectures.
 
 ## Table of Contents
-[Introduction](#introduction)
-[Features](#features)
-[Techniques Used](#techniquesused)
-[Installation](#installation)
-[Usage](#usage)
-[Intel oneAPI Integration](#inteloneApi)
+-[Introduction](#introduction)<br>
+-[Features](#features)<br>
+-[Techniques Used](#techniques_used)<br>
+-[Installation](#installation)<br>
+-[Usage](#usage)<br>
+-[Intel oneAPI Integration](#inteloneapiintegration)<br>
 
 ## Introduction
 In this repository, we present a chat bot that demonstrates the capabilities of TensorFlow in the field of natural language processing. The chat bot interacts with users in a human-like manner, responding to text inputs and engaging in meaningful conversations. By combining encoding-decoding techniques and attention mechanisms, the bot can understand and generate coherent responses.
@@ -20,7 +20,8 @@ Text Analysis: The chat bot uses advanced text analysis techniques to understand
 Encoding-Decoding: Utilizes encoding-decoding architecture to generate contextually relevant responses.
 Attention Mechanism: Employs attention mechanisms for enhanced response coherence.
 Intel oneAPI Integration: Optimized performance on Intel architectures through Intel oneAPI toolkit.
-Techniques Used
+
+## Techniques Used
 The project employs the following techniques to achieve its functionality:
 
 ### Encoding-Decoding Architecture: The chat bot utilizes an encoding-decoding architecture to understand user inputs and generate meaningful responses.
