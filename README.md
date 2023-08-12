@@ -1,7 +1,7 @@
 # TensorFlow Chat Bot with Text Analysis and Intel oneAPI
 
 #### powered by
-![Chat Bot Banner]([https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intel.com%2Fcontent%2Fwww%2Fus%2Fen%2Fdeveloper%2Ftools%2Foneapi%2Ftoolkits.html&psig=AOvVaw0eWrg8n3rA-JvYh6YviX9O&ust=1691902691670000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJjTsuyq1oADFQAAAAAdAAAAABAD](https://www.intel.com/content/dam/develop/public/us/en/images/thumbnails/tool-thumbnail-beta-oneapi-logo.jpg))
+![Banner](https://www.intel.com/content/dam/www/central-libraries/us/en/images/2022-09/one-api-white-logo-code-lion-image.jpg.rendition.intel.web.1648.927.jpg)
 
 Welcome to the TensorFlow Chat Bot with Text Analysis and Intel oneAPI repository! This project showcases a powerful and interactive chat bot that utilizes advanced natural language processing techniques, including encoding-decoding and attention mechanisms, all powered by the cutting-edge TensorFlow framework. In addition, this project leverages the Intel oneAPI toolkit to optimize the performance of the chat bot on Intel architectures.
 
