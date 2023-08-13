@@ -1,0 +1,194 @@
+<head>
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    body {
+      width: 100%;
+      margin-top:0;
+      margin-left:0;
+      background: url("images/background.jpg");
+      background-size: 100%;
+    }
+    h1 {
+      display: inline-block;
+      font-family: Century Gothic;
+      font-size: 3em;
+      margin: 0;
+      padding: 14px;
+    }
+    h3 {
+      color: black;
+      font-size: 20px;
+      margin-top: 3px;
+      text-align: center;
+    }
+    #chatbox {
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+      margin-top: 60px;
+    }
+    #userInput {
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+      margin-top: 60px;
+    }
+    #textInput {
+      width: 90%;
+      border: none;
+      border-bottom: 3px solid black;
+      font-size: 17px;
+    }
+    .userText {
+      color: white;
+      font-size: 17px;
+      text-align: right;
+      line-height: 30px;
+    }
+    .userText table {
+      align-self: self-end;
+    }
+    .userText span {
+      background-color: #808080;
+      padding: 10px;
+      font-family: Century Gothic;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 20px;
+    }
+    input[type=text]{
+      border-radius: 20px;
+      padding:10px;
+      border: 2px solid;
+    }
+    input::placeholder
+    {
+      font-family: Century Gothic;
+    }
+    .botText {
+      color: white;
+      font-size: 17px;
+      text-align: left;
+      line-height: 30px;
+      margin-top: 30px
+    }
+    .botText span {
+      background-color: #4169e1;
+      color: aliceblue;
+      padding: 10px;
+      font-family: Century Gothic;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 20px;
+      
+    }
+    #tidbit {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+    }
+    .boxed {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      margin-top: 60px;
+      border-radius: 20px;
+      border: 3px solid black;
+      background-color:rgb(188, 228, 227);
+    }
+  </style>
+</head>
+
+
+<body >
+  <center>
+    <div style="background-color: cadetblue;border-radius: 5px;">
+    <table >
+      <tr>
+        <td>
+          <img
+          src="images/Trainer.png"
+          alt="MedBot+"
+          style="width:80px;"
+        />
+        </td>
+        <td>
+          <h1>
+            MedBot+
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </div>
+    <br>
+  </center>
+  
+  <div class="boxed">
+    <div>
+      <div id="chatbox">
+        <p class="botText">
+          <table >
+            <tr>
+              <td>
+                <img
+                src="images/Trainer.png"
+                alt="MedBot+"
+                style="width:50px;"
+              />
+              </td>
+              <td><span>Hi! I'm MedBot+, Your Healthcare Bot.</span></td>
+              </tr>
+              </table>
+        </p>
+        <p class="botText">
+          <table >
+            <tr>
+              <td>
+                <img
+                src="images/Trainer.png"
+                alt="MedBot+"
+                style="width:50px;"
+              />
+              </td>
+              <td><span>Enter Your Healthcare Related Issues.</span></td>
+              </tr>
+              </table>
+        </p>
+      </div>
+      <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="Please Enter your Query" />
+        <br><br>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+      function getBotResponse() {
+        var rawText = $("#textInput").val();
+        var userHtml = '<p class="userText"><span>' + rawText + '</span>   <img src="images/customer.png" alt="MedBot+" style="width:50px;vertical-align: middle;"></p>';
+        $("#textInput").val("");
+        $("#chatbox").append(userHtml);
+        document
+          .getElementById("userInput")
+          .scrollIntoView({ block: "start", behavior: "smooth" });
+        $.get("/get", { msg: rawText }).done(function(data) {
+          var botHtml = '<p class="botText"><img src="images/Trainer.png" alt="MedBot+" style="width:50px;vertical-align:middle"/><span>'+data+ "</span></p>";
+          $("#chatbox").append(botHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+        });
+      }
+      $("#textInput").keypress(function(e) {
+        if (e.which == 13) {
+          getBotResponse();
+        }
+      });
+</script>
